@@ -6,7 +6,8 @@ angular.module('agileRetroApp', [
   'ngSanitize',
   'ngRoute',
   'btford.socket-io',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ngDragDrop'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
