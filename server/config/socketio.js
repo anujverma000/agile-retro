@@ -18,6 +18,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/agileboard/agileboard.socket').register(socket);
   require('../api/thing/thing.socket').register(socket);
 }
 
