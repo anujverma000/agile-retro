@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('agileRetroApp')
-  .controller('AgileboardCtrl', function ($scope, $http, Auth, User) {
+  .controller('AgileboardCtrl', function ($scope, $http, socket, Auth, User) {
   		$scope.agileboards = [];
   		$http.get('/api/agileboards').success(function(agileboards) {
 	      $scope.agileboards = agileboards;
-	      socket.syncUpdates('agileboards', $scope.agileboards);
+	      socket.syncUpdates('agileboard', $scope.agileboards);
 	    });
 
 	    $scope.addAgileBoard = function() {
@@ -13,6 +13,7 @@ angular.module('agileRetroApp')
 	        return;
 	      }
 	      $http.post('/api/agileboards', { name: $scope.name, info: $scope.info, active: true });
-	      $scope.newThing = '';
+	      $scope.name = '';
+	      $scope.info = '';
 	    };
   });
