@@ -1,34 +1,32 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">  
-  <div class="row">
-    <div class="col-lg-3">
-      <h1 class="page-header">Active Boards:</h1>
-      <ul class="nav nav-tabs nav-stacked" ng-repeat="agileboard in agileboards">
-        <li>
-        	<a href="#">
-        		<div>
-        			<strong>{{agileboard.name}}</strong>
-        			<button type="button" class="close fr" ng-click="deleteThing(thing)">&times;</button>
-        		</div>
-        		{{agileboard.info}}
-        		
-        	</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+
+<div class="left-menu">
+  <ul  ng-repeat="agileboard in agileboards">
+    <li>
+      <a href="#">
+        <div>
+          <strong>{{agileboard.name}}</strong>
+          <button type="button" class="close fr" ng-click="deleteThing(thing)">&times;</button>
+        </div>
+        <div>{{agileboard.info}}</div>
+      </a>
+    </li>
+  </ul>
 </div>
 
-<div class="col-md-6">
-	<form class="thing-form">
-	    <label>Add a New Retrospective Board/label>
-	    <p class="input-group">
-	      <input type="text" class="form-control" placeholder="Name" ng-model="name">
-	      <input type="text" class="form-control" placeholder="Info" ng-model="info">
-	      <span class="input-group-btn">
-	        <button type="submit" class="btn btn-primary" ng-click="addAgileBoard()">Add New</button>
-	      </span>
-	    </p>
-	  </form>
+<div class="container">  
+  <div class="col-md-6">
+  	<form class="thing-form">
+  	    <label>Add a New Retrospective Board/label>
+  	    <p class="input-group">
+  	      <input type="text" class="form-control" placeholder="Name" ng-model="name">
+  	      <input type="text" class="form-control" placeholder="Info" ng-model="info">
+  	      <span class="input-group-btn">
+  	        <button type="submit" class="btn btn-primary" ng-click="addAgileBoard()">Add New</button>
+  	      </span>
+  	    </p>
+  	  </form>
+  </div>
+
 </div>

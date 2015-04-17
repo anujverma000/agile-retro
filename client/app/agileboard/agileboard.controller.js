@@ -12,7 +12,7 @@ angular.module('agileRetroApp')
 	      if($scope.name === '') {
 	        return;
 	      }
-	      $http.post('/api/agileboards', { name: $scope.name, info: $scope.info, active: true });
+	      $http.post('/api/agileboards', { name: $scope.name, info: $scope.info, active: true, createdAt: new Date(), updatedAt: new Date() });
 	      $scope.name = '';
 	      $scope.info = '';
 	    };

@@ -1,0 +1,23 @@
+.left-menu{
+	width: 250px;
+	float: left;
+	padding: 10px;
+
+	ul{
+		list-style: none;
+		-webkit-padding-start: 0;
+		li {
+			padding: 5px;
+			a{
+				text-decoration: none;
+				color: #545454;
+			}
+			a:hover{
+				color: #000;
+			}
+		}
+		li:hover{
+			background: #ddd;
+		}
+	}
+}
